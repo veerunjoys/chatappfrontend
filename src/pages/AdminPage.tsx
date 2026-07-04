@@ -95,7 +95,7 @@ export const AdminPage: React.FC = () => {
     };
   }, []);
 
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>, type: "image" | "voice") => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     await handleUpload(file);
@@ -298,7 +298,7 @@ export const AdminPage: React.FC = () => {
                   <input
                     type="file"
                     accept="image/*"
-                    onChange={(e) => handleFileChange(e, "image")}
+                    onChange={(e) => handleFileChange(e)}
                     className="hidden"
                   />
                 </label>
@@ -309,7 +309,7 @@ export const AdminPage: React.FC = () => {
                   <input
                     type="file"
                     accept="audio/*"
-                    onChange={(e) => handleFileChange(e, "voice")}
+                    onChange={(e) => handleFileChange(e)}
                     className="hidden"
                   />
                 </label>
