@@ -11,9 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+# Block secret files
 .env
 .env.local
-.env.*
+# Allow deployment env files (Vite reads these during build)
+!.env.production
+!.env.development
 
 # Editor directories and files
 .vscode/*
