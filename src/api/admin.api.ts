@@ -1,6 +1,7 @@
 import type { User, Message } from "../types";
+import { API_BASE_URL } from "./config";
 
-const API_URL = "http://localhost:8000/api/admin";
+const API_URL = `${API_BASE_URL}/api/admin`;
 
 const getHeaders = () => {
   const token = localStorage.getItem("chat_token");
@@ -49,7 +50,7 @@ export const adminApi = {
       headers["Authorization"] = `Bearer ${token}`;
     }
 
-    const res = await fetch("http://localhost:8000/api/admin/upload", {
+    const res = await fetch(`${API_URL}/upload`, {
       method: "POST",
       headers,
       body: formData,

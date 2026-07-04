@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Send, Plus, Mic, Volume2, X, Square, Loader2 } from "lucide-react";
 import { chatApi } from "../api/chat.api";
+import { API_BASE_URL } from "../api/config";
 
 interface MessageInputProps {
   onSendMessage: (content: string, attachmentUrl?: string, attachmentType?: string) => void;
@@ -171,7 +172,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
           <div className="flex items-center gap-3">
             {attachmentType === "image" ? (
               <div className="w-10 h-10 rounded-md overflow-hidden bg-white border border-slate-200 flex items-center justify-center flex-shrink-0">
-                <img src={`http://localhost:8000${attachmentUrl}`} alt="Upload preview" className="w-full h-full object-cover" />
+                <img src={`${API_BASE_URL}${attachmentUrl}`} alt="Upload preview" className="w-full h-full object-cover" />
               </div>
             ) : (
               <div className="w-8 h-8 rounded-md bg-indigo-100 flex items-center justify-center flex-shrink-0">

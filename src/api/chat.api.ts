@@ -1,6 +1,7 @@
 import type { Room, Message, User } from "../types";
+import { API_BASE_URL } from "./config";
 
-const API_URL = "http://localhost:8000/api/chats";
+const API_URL = `${API_BASE_URL}/api/chats`;
 
 const getHeaders = () => {
   const token = localStorage.getItem("chat_token");

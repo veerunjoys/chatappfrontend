@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { adminApi } from "../api/admin.api";
+import { chatApi } from "../api/chat.api";
+import { API_BASE_URL } from "../api/config";
 import type { User } from "../types";
 import {
   Users, ShieldBan, ShieldCheck, Loader2, Megaphone,
@@ -239,7 +241,7 @@ export const AdminPage: React.FC = () => {
                 <div className="flex items-center gap-3 min-w-0">
                   {attachmentType === "image" ? (
                     <div className="w-14 h-14 rounded-md overflow-hidden bg-white border border-slate-200 flex-shrink-0 flex items-center justify-center">
-                      <img src={`http://localhost:8000${attachmentUrl}`} alt="Upload preview" className="w-full h-full object-cover" />
+                      <img src={`${API_BASE_URL}${attachmentUrl}`} alt="Upload preview" className="w-full h-full object-cover" />
                     </div>
                   ) : (
                     <div className="w-10 h-10 rounded-md bg-indigo-100 flex items-center justify-center flex-shrink-0">

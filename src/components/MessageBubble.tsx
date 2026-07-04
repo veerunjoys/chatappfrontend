@@ -2,6 +2,7 @@ import React from "react";
 import type { Message } from "../types";
 import { useAuth } from "../context/AuthContext";
 import { Megaphone } from "lucide-react";
+import { API_BASE_URL } from "../api/config";
 
 interface MessageBubbleProps {
   message: Message;
@@ -32,7 +33,7 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message, showSende
     const fullUrl = message.attachment_url
       ? (message.attachment_url.startsWith("http")
         ? message.attachment_url
-        : `http://localhost:8000${message.attachment_url}`)
+        : `${API_BASE_URL}${message.attachment_url}`)
       : "";
     return (
       <div className="flex justify-center my-2">
@@ -69,7 +70,7 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message, showSende
   const fullUrl = message.attachment_url
     ? (message.attachment_url.startsWith("http")
       ? message.attachment_url
-      : `http://localhost:8000${message.attachment_url}`)
+      : `${API_BASE_URL}${message.attachment_url}`)
     : "";
 
   return (

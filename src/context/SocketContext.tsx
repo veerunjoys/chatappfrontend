@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 import type { Socket } from "socket.io-client";
 import { useAuth } from "./AuthContext";
 import type { Message } from "../types";
+import { API_BASE_URL } from "../api/config";
 
 interface TypingStatus {
   room_id: number;
@@ -47,7 +48,7 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       return;
     }
 
-    const newSocket = io("http://localhost:8000", {
+    const newSocket = io(API_BASE_URL, {
       auth: { token },
       transports: ["websocket"],
       reconnectionAttempts: 5,
