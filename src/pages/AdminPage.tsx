@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { adminApi } from "../api/admin.api";
-import { chatApi } from "../api/chat.api";
 import { API_BASE_URL } from "../api/config";
 import type { User } from "../types";
 import {
