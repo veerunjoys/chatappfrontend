@@ -4,7 +4,7 @@ Chime is a full-stack real-time messaging app: 1-to-1 chats, group chats, a glob
 
 This repo is the **frontend** (React + TypeScript + Vite). The API/WebSocket server lives in a separate repo: **[chat-app-backend-](https://github.com/veerunjoys/chat-app-backend-)**.
 
-- **Live app:** https://chatappfrontend-git-main-veerunjoys-projects.vercel.app
+- **Live app:** https://chatappfrontend-k57p.vercel.app/
 - **Live API:** https://chat-app-backend-1v64.onrender.com
 
 ## Why this project exists
